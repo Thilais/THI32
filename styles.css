@@ -157,3 +157,37 @@ body {
 .submit-button:hover {
     background-color: #f89db3;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .details-box, .message-box, .rsvp-box {
+        width: 90%; /* Ajusta a largura para telas pequenas */
+    }
+
+    .details-box ul, .extras ul {
+        width: 100%; /* Faz a lista ocupar toda a largura da caixa */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .rsvp-box input, .rsvp-box select {
+        width: 100%; /* Campos ocupam toda a largura da tela */
+    }
+
+    .submit-button, .copy-button {
+        width: 100%; /* Botões ocupam toda a largura */
+        padding: 10px; /* Aumenta o tamanho dos botões */
+    }
+
+    .back-button-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .back-button {
+        width: 100%; /* Botão voltar ocupa toda a largura */
+        padding: 10px;
+    }
+}
