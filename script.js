@@ -37,7 +37,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function (event)
         return;
     }
 
-    // Enviar os dados para o Google Sheets via Web App
+    // Enviar os dados para o Web App
     fetch("https://script.google.com/macros/s/AKfycby070uCfjlnJF7-f9Sw840td62E9uPH8iktf_sToNO7XGm4qJ4NcK1OGhmNCpnSghk/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -45,17 +45,19 @@ document.getElementById("rsvp-form").addEventListener("submit", function (event)
     })
         .then(response => response.text())
         .then(data => {
+            console.log("Resposta do servidor:", data);
             document.getElementById("rsvp-message").textContent = "Confirmação enviada com sucesso!";
             document.getElementById("rsvp-message").style.color = "green";
             document.getElementById("rsvp-message").style.display = "block";
         })
         .catch(error => {
+            console.error("Erro no envio:", error); // Exibe o erro no console
             document.getElementById("rsvp-message").textContent = "Erro ao enviar confirmação. Tente novamente.";
             document.getElementById("rsvp-message").style.color = "red";
             document.getElementById("rsvp-message").style.display = "block";
-            console.error("Erro:", error);
         });
 
     // Limpa os campos do formulário
     document.getElementById("rsvp-form").reset();
 });
+
