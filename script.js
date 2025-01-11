@@ -36,8 +36,8 @@ document.getElementById("rsvp-form").addEventListener("submit", function (event)
     // Exibir mensagem de confirmação
     const message =
         attendance === "yes"
-            ? `Obrigada, ${name}! Mal podemos esperar para te ver na festa! 🎉`
-            : `Poxa, ${name}, sentimos muito que você não poderá vir. 😢`;
+            ? `Obrigada, ${name}! Mal posso esperar para te ver na festa! 🎉`
+            : `Poxa, ${name}, sinto muito que você não poderá vir. 😢`;
 
     document.getElementById("rsvp-message").textContent = message;
     document.getElementById("rsvp-message").style.display = "block";
