@@ -43,24 +43,18 @@
             </div>
         </div>
 
-        <!-- Confirmação de presença (RSVP) -->
-        <div class="rsvp-box">
-            <h2>Confirme sua presença</h2>
-            <form id="rsvp-form">
-                <label for="name">Seu Nome:</label><br>
-                <input type="text" id="name" name="name" placeholder="Digite seu nome" required><br><br>
-
-                <label for="attendance">Você vai à festa?</label><br>
-                <select id="attendance" name="attendance" required>
-                    <option value="" disabled selected>Selecione uma opção</option>
-                    <option value="yes">Sim, estarei lá!</option>
-                    <option value="no">Infelizmente não poderei ir</option>
-                </select><br><br>
-
-                <button type="submit" class="submit-button">Enviar</button>
-            </form>
-            <p id="rsvp-message" style="display: none; margin-top: 10px; color: #f76c9b; font-weight: bold;"></p>
+        
+<!-- Confirmação de presença (RSVP) -->
+        <div class="rsvp-message">
+            <h2>Confirme se você vai:</h2>
+            <div class="rsvp-buttons">
+                <a href="https://wa.me/5511945208820?text=Olá!%20Confirmo%20minha%20presença%20na%20festa!%20Mal%20posso%20esperar!%20🎉"
+                   class="rsvp-button yes" target="_blank">Sim, eu vou</a>
+                <a href="https://wa.me/5511945208820?text=Olá!%20Infelizmente%20não%20poderei%20comparecer%20à%20festa.%20Desejo%20um%20ótimo%20evento!%20❤️"
+                   class="rsvp-button no" target="_blank">Não vou poder ir</a>
+            </div>
         </div>
+        
 
         <!-- Botão Voltar -->
         <div class="back-button-container">
