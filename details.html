@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Festa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Caixa de mensagem no topo -->
+        <div class="message-box">
+            <p>Olá, minhas queridas amigas! 🥳</p>
+            <p>Estou comemorando 32 anos e preparei esse dia com muito carinho para que todas possam aproveitar, se divertir e criar memórias inesquecíveis. Estou ansiosa para compartilhar esse momento com vocês! 💕</p>
+        </div>
+
+        <!-- Seção de detalhes da festa -->
+        <div class="details-box">
+            <h1>Detalhes da Festa</h1>
+            <ul class="details-list">
+                <li><strong>Data:</strong> 20 de Janeiro de 2025</li>
+                <li><strong>Horário:</strong> 10h30 às 14h30</li>
+                <li>
+                    <strong>Endereço:</strong> Av. Bartholomeu de Carlos, 675 - Salão de Festas
+                    <button onclick="copyAddress()" class="copy-button">Copiar Endereço</button>
+                </li>
+            </ul>
+
+            <!-- O que terá na festa -->
+            <div class="extras">
+                <h2>O que teremos na festa?</h2>
+                <ul>
+                    <li>Um super brunch especial</li>
+                    <li>Piscina (proibido não entrar ein!)</li>
+                    <li>
+                        Momento Spa - massagem garantida! 
+                        <a href="Venus_estetica.jpeg" target="_blank" class="spa-link">
+                            Clique aqui para ver serviços adicionais
+                        </a>
+                    </li>
+                    <li>E muito mais!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Confirmação de presença (RSVP) -->
+        <div class="rsvp-box">
+            <h2>Confirme sua presença</h2>
+            <form id="rsvp-form">
+                <label for="name">Seu Nome:</label><br>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required><br><br>
+
+                <label for="attendance">Você vai à festa?</label><br>
+                <select id="attendance" name="attendance" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="yes">Sim, estarei lá!</option>
+                    <option value="no">Infelizmente não poderei ir</option>
+                </select><br><br>
+
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+            <p id="rsvp-message" style="display: none; margin-top: 10px; color: #f76c9b; font-weight: bold;"></p>
+        </div>
+
+        <!-- Botão Voltar -->
+        <div class="back-button-container">
+            <button onclick="goBack()" class="back-button">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
