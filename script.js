@@ -22,42 +22,14 @@ function goBack() {
     window.location.href = "index.html";
 }
 
-// Manipulando o formulário RSVP
-document.getElementById("rsvp-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
-
-    const name = document.getElementById("name").value.trim(); // Remove espaços extras
-    const attendance = document.getElementById("attendance").value;
-
-    // Validação dos campos
-    if (!name || !attendance) {
-        document.getElementById("rsvp-message").textContent = "Por favor, preencha todos os campos antes de enviar.";
-        document.getElementById("rsvp-message").style.color = "red";
-        document.getElementById("rsvp-message").style.display = "block";
-        return;
-    }
-
-    // Enviar os dados para o Web App
-    fetch("https://script.google.com/macros/s/AKfycby070uCfjlnJF7-f9Sw840td62E9uPH8iktf_sToNO7XGm4qJ4NcK1OGhmNCpnSghk/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, attendance }),
-    })
-        .then(response => response.text())
-        .then(data => {
-            console.log("Resposta do servidor:", data);
-            document.getElementById("rsvp-message").textContent = "Confirmação enviada com sucesso!";
-            document.getElementById("rsvp-message").style.color = "green";
-            document.getElementById("rsvp-message").style.display = "block";
-        })
-        .catch(error => {
-            console.error("Erro no envio:", error); // Exibe o erro no console
-            document.getElementById("rsvp-message").textContent = "Erro ao enviar confirmação. Tente novamente.";
-            document.getElementById("rsvp-message").style.color = "red";
-            document.getElementById("rsvp-message").style.display = "block";
-        });
-
-    // Limpa os campos do formulário
-    document.getElementById("rsvp-form").reset();
+// Evento para o botão "Sim, eu vou"
+document.getElementById("yes-button").addEventListener("click", function () {
+    const url = "https://wa.me/5511945208820?text=Olá!%20Confirmo%20minha%20presença%20na%20festa!%20Mal%20posso%20esperar!%20🎉";
+    window.open(url, "_blank"); // Abre o link em uma nova aba
 });
 
+// Evento para o botão "Não vou poder ir"
+document.getElementById("no-button").addEventListener("click", function () {
+    const url = "https://wa.me/5511945208820?text=Olá!%20Infelizmente%20não%20poderei%20comparecer%20à%20festa.%20Desejo%20um%20ótimo%20evento!%20❤️";
+    window.open(url, "_blank"); // Abre o link em uma nova aba
+});
